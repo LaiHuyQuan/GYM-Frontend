@@ -1,0 +1,407 @@
+<html lang="en">
+  <head>
+    <title>Gym System Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="./css/matrix-style.css" />
+    <link rel="stylesheet" href="./css/matrix-media.css" />
+    <link href="./font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./font-awesome/css/all.css" rel="stylesheet" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body cz-shortcut-listen="true">
+    <!--Header-part-->
+    <div id="header">
+      <h1><a href="dashboard.html">Perfect Gym Admin</a></h1>
+    </div>
+    <!--close-Header-part-->
+
+    <!--top-Header-menu-->
+    <div id="user-nav" class="navbar navbar-inverse">
+      <ul class="nav right">
+        <li class="dropdown" id="profile-messages">
+          <a
+            title=""
+            href="#"
+            data-toggle="dropdown"
+            data-target="#profile-messages"
+            class="dropdown-toggle"
+            ><i class="fas fa-user-circle"></i>
+            <span class="text">Welcome Admin</span><b class="caret"></b
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#"><i class="fas fa-user"></i> My Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><i class="fas fa-check"></i> My Tasks</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="./logout.html"><i class="fas fa-key"></i> Log Out</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="">
+          <a title="" href="./logout.html"
+            ><i class="fas fa-power-off"></i>
+            <span class="text">Logout</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Visit codeastro.com for more projects -->
+
+    <!--sidebar-menu-->
+    <div id="sidebar">
+      <a href="#" class="visible-phone"
+        ><i class="fas fa-home"></i> Dashboard</a
+      >
+      <ul style="display: block">
+        <li class="">
+          <a href="index.html"
+            ><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-users"></i> <span>Manage Members</span>
+            <span class="label label-important"
+              >18<!-- Visit codeastro.com for more projects -->
+            </span></a
+          >
+          <ul>
+            <li class="">
+              <a href="members.html"
+                ><i class="fas fa-arrow-right"></i> List All Members</a
+              >
+            </li>
+            <li class="">
+              <a href="member-entry.html"
+                ><i class="fas fa-arrow-right"></i> Member Entry Form</a
+              >
+            </li>
+            <li class="">
+              <a href="remove-member.html"
+                ><i class="fas fa-arrow-right"></i> Remove Member</a
+              >
+            </li>
+            <li class="">
+              <a href="edit-member.html"
+                ><i class="fas fa-arrow-right"></i> Update Member Details</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-dumbbell"></i> <span>Gym Equipment</span>
+            <span class="label label-important"
+              >6<!-- Visit codeastro.com for more projects -->
+            </span></a
+          >
+          <ul>
+            <li class="">
+              <a href="equipment.html"
+                ><i class="fas fa-arrow-right"></i> List Gym Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="equipment-entry.html"
+                ><i class="fas fa-arrow-right"></i> Add Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="remove-equipment.html"
+                ><i class="fas fa-arrow-right"></i> Remove Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="edit-equipment.html"
+                ><i class="fas fa-arrow-right"></i> Update Equipment Details</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="">
+          <a href="view-attendance.html"
+            ><i class="fas fa-calendar-alt"></i> <span>Attendance</span></a
+          >
+        </li>
+
+        
+        <li class="">
+          <a href="member-status.html"
+            ><i class="fas fa-eye"></i> <span>Member's Status</span></a
+          >
+        </li>
+        <li class="">
+          <a href="payment.html"
+            ><i class="fas fa-hand-holding-usd"></i> <span>Payments</span></a
+          >
+        </li>
+        <li class="">
+          <a href="announcement.html"
+            ><i class="fas fa-bullhorn"></i> <span>Manage Feedback</span></a
+          >
+        </li>
+        <li class="active">
+          <a href="staffs.html"
+            ><i class="fas fa-briefcase"></i> <span>Staff Management</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"><i class="fas fa-file"></i> <span>Reports</span></a>
+          <ul>
+            <li class="">
+              <a href="reports.html"
+                ><i class="fas fa-arrow-right"></i> Chart Representation</a
+              >
+            </li>
+            <li class="">
+              <a href="members-report.html"
+                ><i class="fas fa-arrow-right"></i> Members Report</a
+              >
+            </li>
+            <li class="">
+              <a href="progress-report.html"
+                ><i class="fas fa-arrow-right"></i> Customer Progress Report</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- Visit codeastro.com for more projects -->
+      </ul>
+    </div>
+    <!--sidebar-menu-->
+
+    <div id="content">
+      <div id="content-header">
+        <div id="breadcrumb">
+          <a
+            href="index.html"
+            class="tip-bottom"
+            data-original-title="Go to Home"
+            ><i class="fas fa-home"></i> Home</a
+          >
+          <a href="staffs.html">Staffs</a>
+          <a href="staffs-entry.html" class="current">Staff Entry</a>
+        </div>
+        <h1 class="text-center">
+          GYM's Staff Entry Form <i class="fas fa-briefcase"></i>
+        </h1>
+      </div>
+      <div class="container-fluid">
+        <hr />
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="widget-box">
+              <div class="widget-title">
+                <span class="icon"> <i class="fas fa-briefcase"></i> </span>
+                <h5>Staff Details</h5>
+              </div>
+              <div class="widget-content nopadding">
+                <form
+                  id="form-wizard"
+                  class="form-horizontal ui-formwizard"
+                  method="POST"
+                  novalidate="novalidate"
+                >
+                  <div
+                    id="form-wizard-1"
+                    class="step ui-formwizard-content"
+                    style="display: block"
+                  >
+                    <div class="control-group">
+                      <label class="control-label"
+                        >Enter Staff's Fullname</label
+                      >
+                      <div class="controls">
+                        <input
+                          id="fullname"
+                          type="text"
+                          name="fullname"
+                          required=""
+                          class="ui-wizard-content"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Enter a Username</label>
+                      <div class="controls">
+                        <input
+                          id="username"
+                          type="text"
+                          name="username"
+                          class="ui-wizard-content"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Password</label>
+                      <div class="controls">
+                        <input
+                          id="password"
+                          type="password"
+                          name="password"
+                          class="ui-wizard-content"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Confirm Password</label>
+                      <div class="controls">
+                        <input
+                          id="password2"
+                          type="password"
+                          name="password2"
+                          class="ui-wizard-content"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    id="form-wizard-2"
+                    class="step ui-formwizard-content"
+                    style="display: none"
+                  >
+                    <div class="control-group">
+                      <label class="control-label">Email ID</label>
+                      <div class="controls">
+                        <input
+                          id="email"
+                          type="text"
+                          name="email"
+                          required=""
+                          disabled="disabled"
+                          class="ui-wizard-content"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Address</label>
+                      <div class="controls">
+                        <input
+                          id="address"
+                          type="text"
+                          name="address"
+                          required=""
+                          disabled="disabled"
+                          class="ui-wizard-content"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Designation</label>
+                      <div class="controls">
+                        <select
+                          name="designation"
+                          id="designation"
+                          disabled="disabled"
+                          class="ui-wizard-content"
+                        >
+                          <option value="Cashier">Cashier</option>
+                          <option value="Trainer">Trainer</option>
+                          <option value="GYM Assistant">GYM Assistant</option>
+                          <option value="Front Desk Staff">
+                            Front Desk Staff
+                          </option>
+                          <option value="Manager">Manager</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Gender</label>
+                      <div class="controls">
+                        <select
+                          name="gender"
+                          id="gender"
+                          disabled="disabled"
+                          class="ui-wizard-content"
+                        >
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="control-group">
+                      <label class="control-label">Contact Number</label>
+                      <div class="controls">
+                        <input
+                          id="contact"
+                          type="number"
+                          name="contact"
+                          required=""
+                          disabled="disabled"
+                          class="ui-wizard-content"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <input
+                      id="back"
+                      class="btn btn-primary ui-wizard-content ui-formwizard-button"
+                      type="reset"
+                      value="Back"
+                      disabled="disabled"
+                    />
+                    <input
+                      id="next"
+                      class="btn btn-primary ui-wizard-content ui-formwizard-button"
+                      type="submit"
+                      value="Next"
+                    />
+                    <div id="status"></div>
+                  </div>
+                  <div id="submitted"></div>
+                </form>
+              </div>
+            </div>
+            <!--end of widget box-->
+          </div>
+          <!--end of span 12 -->
+        </div>
+      </div>
+    </div>
+    <!--Footer-part-->
+    <div class="row-fluid">
+      <div id="footer" class="span12">
+        2024 © Developed By Naseeb Bajracharya
+      </div>
+    </div>
+
+    <style>
+      #footer {
+        color: white;
+      }
+    </style>
+    <!--end-Footer-part-->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.ui.custom.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.validate.js"></script>
+    <script src="./js/jquery.wizard.js"></script>
+    <script src="./js/matrix.js"></script>
+    <script src="./js/matrix.wizard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,912 @@
+<html lang="en">
+  <head>
+    <title>Gym System Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="./css/fullcalendar.css" />
+    <link rel="stylesheet" href="./css/matrix-style.css" />
+    <link rel="stylesheet" href="./css/matrix-media.css" />
+    <link href="./font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./font-awesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/jquery.gritter.css" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body cz-shortcut-listen="true">
+    <!--Header-part--><!-- Visit codeastro.com for more projects -->
+    <div id="header">
+      <h1><a href="dashboard.html">Perfect Gym Admin</a></h1>
+    </div>
+    <!--close-Header-part-->
+
+    <!--top-Header-menu--><!-- Visit codeastro.com for more projects -->
+    <div id="user-nav" class="navbar navbar-inverse">
+      <ul class="nav right">
+        <li class="dropdown" id="profile-messages">
+          <a
+            title=""
+            href="#"
+            data-toggle="dropdown"
+            data-target="#profile-messages"
+            class="dropdown-toggle"
+            ><i class="fas fa-user-circle"></i>
+            <span class="text">Welcome Admin</span><b class="caret"></b
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#"><i class="fas fa-user"></i> My Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><i class="fas fa-check"></i> My Tasks</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="./logout.html"><i class="fas fa-key"></i> Log Out</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="">
+          <a title="" href="./logout.html"
+            ><i class="fas fa-power-off"></i>
+            <span class="text">Logout</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Visit codeastro.com for more projects --><!--close-top-Header-menu-->
+    <!--start-top-serch-->
+    <!-- <div id="search">
+      <input type="hidden" placeholder="Search here..."/>
+      <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+    </div> -->
+    <!--close-top-serch-->
+
+    <!--sidebar-menu-->
+    <div id="sidebar">
+      <a href="#" class="visible-phone"
+        ><i class="fas fa-home"></i> Dashboard</a
+      >
+      <ul style="display: block">
+        <li class="">
+          <a href="index.html"
+            ><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-users"></i> <span>Manage Members</span>
+            <span class="label label-important"
+              >18<!-- Visit codeastro.com for more projects -->
+            </span></a
+          >
+          <ul>
+            <li class="">
+              <a href="members.html"
+                ><i class="fas fa-arrow-right"></i> List All Members</a
+              >
+            </li>
+            <li class="">
+              <a href="member-entry.html"
+                ><i class="fas fa-arrow-right"></i> Member Entry Form</a
+              >
+            </li>
+            <li class="">
+              <a href="remove-member.html"
+                ><i class="fas fa-arrow-right"></i> Remove Member</a
+              >
+            </li>
+            <li class="">
+              <a href="edit-member.html"
+                ><i class="fas fa-arrow-right"></i> Update Member Details</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-dumbbell"></i> <span>Gym Equipment</span>
+            <span class="label label-important"
+              >6<!-- Visit codeastro.com for more projects -->
+            </span></a
+          >
+          <ul>
+            <li class="">
+              <a href="equipment.html"
+                ><i class="fas fa-arrow-right"></i> List Gym Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="equipment-entry.html"
+                ><i class="fas fa-arrow-right"></i> Add Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="remove-equipment.html"
+                ><i class="fas fa-arrow-right"></i> Remove Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="edit-equipment.html"
+                ><i class="fas fa-arrow-right"></i> Update Equipment Details</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="">
+          <a href="view-attendance.html"
+            ><i class="fas fa-calendar-alt"></i> <span>Attendance</span></a
+          >
+        </li>
+
+        
+        <li class="">
+          <a href="member-status.html"
+            ><i class="fas fa-eye"></i> <span>Member's Status</span></a
+          >
+        </li>
+        <li class="active">
+          <a href="payment.html"
+            ><i class="fas fa-hand-holding-usd"></i> <span>Payments</span></a
+          >
+        </li>
+        <li class="">
+          <a href="announcement.html"
+            ><i class="fas fa-bullhorn"></i> <span>Manage Feedback</span></a
+          >
+        </li>
+        <li class="">
+          <a href="staffs.html"
+            ><i class="fas fa-briefcase"></i> <span>Staff Management</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"><i class="fas fa-file"></i> <span>Reports</span></a>
+          <ul>
+            <li class="">
+              <a href="reports.html"
+                ><i class="fas fa-arrow-right"></i> Chart Representation</a
+              >
+            </li>
+            <li class="">
+              <a href="members-report.html"
+                ><i class="fas fa-arrow-right"></i> Members Report</a
+              >
+            </li>
+            <li class="">
+              <a href="progress-report.html"
+                ><i class="fas fa-arrow-right"></i> Customer Progress Report</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- Visit codeastro.com for more projects -->
+      </ul>
+    </div>
+    <!--sidebar-menu-->
+
+    <div id="content">
+      <div id="content-header">
+        <div id="breadcrumb">
+          <a
+            href="index.html"
+            class="tip-bottom"
+            data-original-title="Go to Home"
+            ><i class="fas fa-home"></i> Home</a
+          >
+          <a href="payment.html" class="current">Payments</a>
+        </div>
+        <h1 class="text-center">
+          Registered Member's Payment <i class="fas fa-group"></i>
+        </h1>
+      </div>
+      <div class="container-fluid">
+        <hr />
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="widget-box">
+              <div class="widget-title">
+                <span class="icon"> <i class="fas fa-th"></i> </span>
+                <h5>Member's Payment table</h5>
+                <form
+                  id="custom-search-form"
+                  role="search"
+                  method="POST"
+                  action="search-result.html"
+                  class="form-search form-horizontal pull-right"
+                >
+                  <div class="input-append span12">
+                    <input
+                      type="text"
+                      class="search-query"
+                      placeholder="Search"
+                      name="search"
+                      required=""
+                    />
+                    <button type="submit" class="btn">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="widget-content nopadding">
+                <!-- <form action="search-result.html" role="search" method="POST">
+                <div id="search">
+                <input type="text" placeholder="Search Here.." name="search"/>
+                <button type="submit" class="tip-bottom" title="Search"><i class="fas fa-search fa-white"></i></button>
+              </div>
+              </form> -->
+
+                <!-- Visit codeastro.com for more projects -->
+                <table class="table table-bordered data-table table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Member</th>
+                      <th>Last Payment Date</th>
+                      <th>Amount</th>
+                      <th>Choosen Service</th>
+                      <th>Plan</th>
+                      <th>Action</th>
+                      <th>Remind</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">1</div></td>
+                      <td><div class="text-center">Harry Denn</div></td>
+                      <td><div class="text-center">2022-06-02</div></td>
+
+                      <td><div class="text-center">$165</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">3 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=6"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=6"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">2</div></td>
+                      <td><div class="text-center">Charles Anderson</div></td>
+                      <td><div class="text-center">2020-04-01</div></td>
+
+                      <td><div class="text-center">$55</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">3 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=8"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=8"
+                            ><button class="btn btn-danger btn" disabled="">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">3</div></td>
+                      <td><div class="text-center">Justin Schexnayder</div></td>
+                      <td><div class="text-center">2020-03-31</div></td>
+
+                      <td><div class="text-center">$35</div></td>
+                      <td><div class="text-center">Cardio</div></td>
+                      <td><div class="text-center">3 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=11"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=11"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">4</div></td>
+                      <td><div class="text-center">Ryan Crowl</div></td>
+                      <td><div class="text-center">2020-04-02</div></td>
+
+                      <td><div class="text-center">$55</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">12 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=14"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=14"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">5</div></td>
+                      <td><div class="text-center">TrialsChanged</div></td>
+                      <td><div class="text-center">2021-06-12</div></td>
+
+                      <td><div class="text-center">$0</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">0 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=16"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=16"
+                            ><button class="btn btn-danger btn" disabled="">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">6</div></td>
+                      <td><div class="text-center">Karen McGray</div></td>
+                      <td><div class="text-center">2022-05-31</div></td>
+
+                      <td><div class="text-center">$120</div></td>
+                      <td><div class="text-center">Cardio</div></td>
+                      <td><div class="text-center">3 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=17"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=17"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">7</div></td>
+                      <td><div class="text-center">Jeanne Pratt</div></td>
+                      <td><div class="text-center">2021-06-11</div></td>
+
+                      <td><div class="text-center">$55</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">1 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=18"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=18"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">8</div></td>
+                      <td><div class="text-center">George Fann</div></td>
+                      <td><div class="text-center">2021-06-11</div></td>
+
+                      <td><div class="text-center">$55</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">1 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=19"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=19"
+                            ><button class="btn btn-danger btn" disabled="">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">9</div></td>
+                      <td><div class="text-center">Wendy Scott</div></td>
+                      <td><div class="text-center">2021-06-11</div></td>
+
+                      <td><div class="text-center">$55</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">1 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=20"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=20"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">10</div></td>
+                      <td><div class="text-center">Patrick Wilson</div></td>
+                      <td><div class="text-center">2022-06-01</div></td>
+
+                      <td><div class="text-center">$120</div></td>
+                      <td><div class="text-center">Cardio</div></td>
+                      <td><div class="text-center">3 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=21"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=21"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">11</div></td>
+                      <td><div class="text-center">Tommy Marks</div></td>
+                      <td><div class="text-center">2020-04-05</div></td>
+
+                      <td><div class="text-center">$55</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">3 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=22"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=22"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">12</div></td>
+                      <td><div class="text-center">Keith Martin</div></td>
+                      <td><div class="text-center">2022-06-02</div></td>
+
+                      <td><div class="text-center">$120</div></td>
+                      <td><div class="text-center">Cardio</div></td>
+                      <td><div class="text-center">3 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=23"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=23"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">13</div></td>
+                      <td><div class="text-center">Richard G Langston</div></td>
+                      <td><div class="text-center">2022-05-31</div></td>
+
+                      <td><div class="text-center">$420</div></td>
+                      <td><div class="text-center">Sauna</div></td>
+                      <td><div class="text-center">12 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=24"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=24"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">14</div></td>
+                      <td><div class="text-center">Raymond Ledesma</div></td>
+                      <td><div class="text-center">2022-06-02</div></td>
+
+                      <td><div class="text-center">$480</div></td>
+                      <td><div class="text-center">Cardio</div></td>
+                      <td><div class="text-center">12 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=25"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=25"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">15</div></td>
+                      <td><div class="text-center">Mattie F. Maher</div></td>
+                      <td><div class="text-center">2022-06-01</div></td>
+
+                      <td><div class="text-center">$420</div></td>
+                      <td><div class="text-center">Sauna</div></td>
+                      <td><div class="text-center">12 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=26"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=26"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">16</div></td>
+                      <td><div class="text-center">Justin C. Lusk</div></td>
+                      <td><div class="text-center">2022-05-30</div></td>
+
+                      <td><div class="text-center">$40</div></td>
+                      <td><div class="text-center">Cardio</div></td>
+                      <td><div class="text-center">1 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=27"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=27"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">17</div></td>
+                      <td><div class="text-center">Kathy J. Glennon</div></td>
+                      <td><div class="text-center">2022-06-02</div></td>
+
+                      <td><div class="text-center">$330</div></td>
+                      <td><div class="text-center">Fitness</div></td>
+                      <td><div class="text-center">6 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=29"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=29"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                  <tbody>
+                    <tr>
+                      <td><div class="text-center">18</div></td>
+                      <td><div class="text-center">12314</div></td>
+                      <td><div class="text-center">0000-00-00</div></td>
+
+                      <td><div class="text-center">$0</div></td>
+                      <td><div class="text-center">Sauna</div></td>
+                      <td><div class="text-center">180 Month/s</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="user-payment.html?id=30"
+                            ><button class="btn btn-success btn">
+                              <i class="fas fa-dollar-sign"></i> Make Payment
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                      <td>
+                        <div class="text-center">
+                          <a href="sendReminder.html?id=30"
+                            ><button class="btn btn-danger btn">
+                              Alert
+                            </button></a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--end-main-container-part-->
+
+    <!--Footer-part-->
+
+    <div class="row-fluid">
+      <div id="footer" class="span12">
+        2024 © Developed By Naseeb Bajracharya
+      </div>
+    </div>
+
+    <style>
+      #footer {
+        color: white;
+      }
+    </style>
+    <!--end-Footer-part-->
+
+    <style>
+      #custom-search-form {
+        margin: 0;
+        margin-top: 5px;
+        padding: 0;
+      }
+
+      #custom-search-form .search-query {
+        padding-right: 3px;
+        padding-right: 4px \9;
+        padding-left: 3px;
+        padding-left: 4px \9;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+
+      #custom-search-form button {
+        border: 0;
+        background: none;
+        /** belows styles are working good */
+        padding: 2px 5px;
+        margin-top: 2px;
+        position: relative;
+        left: -28px;
+        /* IE7-8 doesn't have border-radius, so don't indent the padding */
+        margin-bottom: 0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+      }
+
+      .search-query:focus + button {
+        z-index: 3;
+      }
+    </style>
+
+    <script src="./js/excanvas.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.ui.custom.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.flot.min.js"></script>
+    <script src="./js/jquery.flot.resize.min.js"></script>
+    <script src="./js/jquery.peity.min.js"></script>
+    <script src="./js/fullcalendar.min.js"></script>
+    <script src="./js/matrix.js"></script>
+    <script src="./js/matrix.dashboard.js"></script>
+    <script src="./js/jquery.gritter.min.js"></script>
+    <script src="./js/matrix.interface.js"></script>
+    <script src="./js/matrix.chat.js"></script>
+    <script src="./js/jquery.validate.js"></script>
+    <script src="./js/matrix.form_validation.js"></script>
+    <script src="./js/jquery.wizard.js"></script>
+    <script src="./js/jquery.uniform.js"></script>
+    <script src="./js/select2.min.js"></script>
+    <script src="./js/matrix.popover.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/matrix.tables.js"></script>
+
+    <script type="text/javascript">
+      // This function is called from the pop-up menus to transfer to
+      // a different page. Ignore if the value returned is a null string:
+      function goPage(newURL) {
+        // if url is empty, skip the menu dividers and reset the menu selection to default
+        if (newURL != "") {
+          // if url is "-", it is this page -- reset the menu:
+          if (newURL == "-") {
+            resetMenu();
+          }
+          // else, send page to designated URL
+          else {
+            document.location.href = newURL;
+          }
+        }
+      }
+
+      // resets the menu selection upon entry to this page:
+      function resetMenu() {
+        document.gomenu.selector.selectedIndex = 2;
+      }
+    </script>
+  </body>
+</html>

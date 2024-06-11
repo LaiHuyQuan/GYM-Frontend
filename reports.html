@@ -1,0 +1,1497 @@
+<html lang="en" class="wf-roboto-n4-active wf-roboto-n5-active wf-active">
+  <head>
+    <title>Gym System Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="./css/fullcalendar.css" />
+    <link rel="stylesheet" href="./css/matrix-style.css" />
+    <link rel="stylesheet" href="./css/matrix-media.css" />
+    <link href="./font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./font-awesome/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/jquery.gritter.css" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Gender", "Number"],
+          ["Female", 6],
+          ["Male", 12],
+        ]);
+        var options = {
+          title: "Percentage of Male and Female GYM Members",
+          //is3D:true,
+          pieHole: 0.0,
+        };
+        var chart = new google.visualization.PieChart(
+          document.getElementById("piechart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/loader.js"
+    ></script>
+
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["bar"] });
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ["Terms", "Total Amount"],
+
+          ["Earnings", 2580],
+
+          ["Expenses", 8060],
+        ]);
+
+        var options = {
+          width: "1050",
+          legend: { position: "none" },
+
+          bars: "horizontal", // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: "top", label: "Total" }, // Top x-axis.
+            },
+          },
+          bar: { groupWidth: "100%" },
+        };
+
+        var chart = new google.charts.Bar(document.getElementById("top_y_div"));
+        chart.draw(data, options);
+      }
+    </script>
+
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["bar"] });
+      google.charts.setOnLoadCallback(drawStuff);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          ["Services", "Total Numbers"],
+          // ["King's pawn (e4)", 44],
+          // ["Queen's pawn (d4)", 31],
+          // ["Knight to King 3 (Nf3)", 12],
+          // ["Queen's bishop pawn (c4)", 10],
+          // ['Other', 3]
+
+          ["Cardio", 6],
+          ["Fitness", 9],
+          ["Sauna", 3],
+        ]);
+
+        var options = {
+          // title: 'Chess opening moves',
+          width: 1050,
+          legend: { position: "none" },
+          // chart: { title: 'Chess opening moves',
+          //          subtitle: 'popularity by percentage' },
+          bars: "horizontal", // Required for Material Bar Charts.
+          axes: {
+            x: {
+              0: { side: "top", label: "Total" }, // Top x-axis.
+            },
+          },
+          bar: { groupWidth: "100%" },
+        };
+
+        var chart = new google.charts.Bar(document.getElementById("top_x_div"));
+        chart.draw(data, options);
+      }
+    </script>
+    <link
+      id="load-css-0"
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.gstatic.com/charts/51/css/core/tooltip.css"
+    />
+    <link
+      id="load-css-1"
+      rel="stylesheet"
+      type="text/css"
+      href="https://www.gstatic.com/charts/51/css/util/util.css"
+    />
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/js/jsapi_compiled_fw_module.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/third_party/dygraphs/dygraph-tickers-combined.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/third_party/webfontloader/webfont.js"
+    ></script>
+    <script
+      type="text/javascript"
+      charset="UTF-8"
+      src="https://www.gstatic.com/charts/51/js/jsapi_compiled_bar_module.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Roboto%7CRoboto:medium"
+    />
+    <link
+      rel="stylesheet"
+      href="http://fonts.googleapis.com/css?family=Roboto%7CRoboto:medium"
+    />
+  </head>
+  <body cz-shortcut-listen="true">
+    <!--Header-part-->
+    <div id="header">
+      <h1><a href="dashboard.html">Perfect Gym Admin</a></h1>
+    </div>
+    <!--close-Header-part-->
+
+    <!--top-Header-menu-->
+    <div id="user-nav" class="navbar navbar-inverse">
+      <ul class="nav right">
+        <li class="dropdown" id="profile-messages">
+          <a
+            title=""
+            href="#"
+            data-toggle="dropdown"
+            data-target="#profile-messages"
+            class="dropdown-toggle"
+            ><i class="fas fa-user-circle"></i>
+            <span class="text">Welcome Admin</span><b class="caret"></b
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#"><i class="fas fa-user"></i> My Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><i class="fas fa-check"></i> My Tasks</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="./logout.html"><i class="fas fa-key"></i> Log Out</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="">
+          <a title="" href="./logout.html"
+            ><i class="fas fa-power-off"></i>
+            <span class="text">Logout</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Visit codeastro.com for more projects --><!--close-top-Header-menu-->
+    <!--start-top-serch-->
+    <!-- <div id="search">
+      <input type="hidden" placeholder="Search here..."/>
+      <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+    </div> -->
+    <!--close-top-serch-->
+    <!-- Visit codeastro.com for more projects -->
+    <!--sidebar-menu-->
+    <div id="sidebar">
+      <a href="#" class="visible-phone"
+        ><i class="fas fa-home"></i> Dashboard</a
+      >
+      <ul style="display: block">
+        <li class="">
+          <a href="index.html"
+            ><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-users"></i> <span>Manage Members</span>
+            <span class="label label-important"
+              >18<!-- Visit codeastro.com for more projects -->
+            </span></a
+          >
+          <ul>
+            <li class="">
+              <a href="members.html"
+                ><i class="fas fa-arrow-right"></i> List All Members</a
+              >
+            </li>
+            <li class="">
+              <a href="member-entry.html"
+                ><i class="fas fa-arrow-right"></i> Member Entry Form</a
+              >
+            </li>
+            <li class="">
+              <a href="remove-member.html"
+                ><i class="fas fa-arrow-right"></i> Remove Member</a
+              >
+            </li>
+            <li class="">
+              <a href="edit-member.html"
+                ><i class="fas fa-arrow-right"></i> Update Member Details</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-dumbbell"></i> <span>Gym Equipment</span>
+            <span class="label label-important"
+              >6<!-- Visit codeastro.com for more projects -->
+            </span></a
+          >
+          <ul>
+            <li class="">
+              <a href="equipment.html"
+                ><i class="fas fa-arrow-right"></i> List Gym Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="equipment-entry.html"
+                ><i class="fas fa-arrow-right"></i> Add Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="remove-equipment.html"
+                ><i class="fas fa-arrow-right"></i> Remove Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="edit-equipment.html"
+                ><i class="fas fa-arrow-right"></i> Update Equipment Details</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="">
+          <a href="view-attendance.html"
+            ><i class="fas fa-calendar-alt"></i> <span>Attendance</span></a
+          >
+        </li>
+
+        
+        <li class="">
+          <a href="member-status.html"
+            ><i class="fas fa-eye"></i> <span>Member's Status</span></a
+          >
+        </li>
+        <li class="">
+          <a href="payment.html"
+            ><i class="fas fa-hand-holding-usd"></i> <span>Payments</span></a
+          >
+        </li>
+        <li class="">
+          <a href="announcement.html"
+            ><i class="fas fa-bullhorn"></i> <span>Manage Feedback</span></a
+          >
+        </li>
+        <li class="">
+          <a href="staffs.html"
+            ><i class="fas fa-briefcase"></i> <span>Staff Management</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"><i class="fas fa-file"></i> <span>Reports</span></a>
+          <ul>
+            <li class="active">
+              <a href="reports.html"
+                ><i class="fas fa-arrow-right"></i> Chart Representation</a
+              >
+            </li>
+            <li class="">
+              <a href="members-report.html"
+                ><i class="fas fa-arrow-right"></i> Members Report</a
+              >
+            </li>
+            <li class="">
+              <a href="progress-report.html"
+                ><i class="fas fa-arrow-right"></i> Customer Progress Report</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- Visit codeastro.com for more projects -->
+      </ul>
+    </div>
+    <!--sidebar-menu-->
+
+    <div id="content">
+      <div id="content-header">
+        <div id="breadcrumb">
+          <a
+            href="index.html"
+            class="tip-bottom"
+            data-original-title="Go to Home"
+            ><i class="fas fa-home"></i> Home</a
+          >
+          <a href="reports.html" class="current">Chart Representation</a>
+        </div>
+        <h1 class="text-center">
+          Earning and Expenses Report <i class="fas fa-chart-bar"></i>
+        </h1>
+      </div>
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div id="top_y_div" style="width: 700px; height: 300px">
+              <div style="position: relative; width: 1050px; height: 300px">
+                <div
+                  style="
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                  "
+                >
+                  <svg width="1050" height="300">
+                    <defs>
+                      <filter
+                        x="-100%"
+                        y="-100%"
+                        width="300%"
+                        height="300%"
+                        id="rablfilter6"
+                      >
+                        <feGaussianBlur
+                          in="SourceAlpha"
+                          stdDeviation="2"
+                        ></feGaussianBlur>
+                        <feOffset dx="0" dy="0"></feOffset>
+                        <feComponentTransfer>
+                          <feFuncA type="linear" slope="0"></feFuncA>
+                        </feComponentTransfer>
+                        <feMerge>
+                          <feMergeNode></feMergeNode>
+                          <feMergeNode in="SourceGraphic"></feMergeNode>
+                        </feMerge>
+                      </filter>
+                      <filter
+                        x="-100%"
+                        y="-100%"
+                        width="300%"
+                        height="300%"
+                        id="rablfilter5"
+                      >
+                        <feGaussianBlur
+                          in="SourceAlpha"
+                          stdDeviation="2"
+                        ></feGaussianBlur>
+                        <feOffset dx="0" dy="0"></feOffset>
+                        <feComponentTransfer>
+                          <feFuncA type="linear" slope="0.4"></feFuncA>
+                        </feComponentTransfer>
+                        <feMerge>
+                          <feMergeNode></feMergeNode>
+                          <feMergeNode in="SourceGraphic"></feMergeNode>
+                        </feMerge>
+                      </filter>
+                      <filter
+                        x="-100%"
+                        y="-100%"
+                        width="300%"
+                        height="300%"
+                        id="rablfilter4"
+                      >
+                        <feGaussianBlur
+                          in="SourceAlpha"
+                          stdDeviation="1"
+                        ></feGaussianBlur>
+                        <feOffset dx="0" dy="2"></feOffset>
+                        <feComponentTransfer>
+                          <feFuncA type="linear" slope="0.2"></feFuncA>
+                        </feComponentTransfer>
+                        <feMerge>
+                          <feMergeNode></feMergeNode>
+                          <feMergeNode in="SourceGraphic"></feMergeNode>
+                        </feMerge>
+                      </filter>
+                      <filter
+                        x="-100%"
+                        y="-100%"
+                        width="300%"
+                        height="300%"
+                        id="rablfilter3"
+                      >
+                        <feGaussianBlur
+                          in="SourceAlpha"
+                          stdDeviation="2"
+                        ></feGaussianBlur>
+                        <feOffset dx="0" dy="1"></feOffset>
+                        <feComponentTransfer>
+                          <feFuncA type="linear" slope="0.4"></feFuncA>
+                        </feComponentTransfer>
+                        <feMerge>
+                          <feMergeNode></feMergeNode>
+                          <feMergeNode in="SourceGraphic"></feMergeNode>
+                        </feMerge>
+                      </filter>
+                      <filter
+                        x="-100%"
+                        y="-100%"
+                        width="300%"
+                        height="300%"
+                        id="rablfilter2"
+                      >
+                        <feGaussianBlur
+                          in="SourceAlpha"
+                          stdDeviation="0"
+                        ></feGaussianBlur>
+                        <feOffset dx="0" dy="1"></feOffset>
+                        <feComponentTransfer>
+                          <feFuncA type="linear" slope="0.4"></feFuncA>
+                        </feComponentTransfer>
+                        <feMerge>
+                          <feMergeNode></feMergeNode>
+                          <feMergeNode in="SourceGraphic"></feMergeNode>
+                        </feMerge>
+                      </filter>
+                      <clipPath id="rablfilter0">
+                        <rect x="90.5" y="53.5" width="951" height="246"></rect>
+                      </clipPath>
+                    </defs>
+                    <g>
+                      <rect
+                        x="0"
+                        y="0"
+                        width="1050"
+                        height="300"
+                        fill="white"
+                        stroke="black"
+                        stroke-width="0"
+                      ></rect>
+                      <rect
+                        x="90.5"
+                        y="53.5"
+                        width="951"
+                        height="246"
+                        fill="none"
+                      ></rect>
+                    </g>
+                    <g>
+                      <line
+                        x1="90.5"
+                        x2="90.5"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#9E9E9E"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="196.16666666666666"
+                        x2="196.16666666666666"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="301.8333333333333"
+                        x2="301.8333333333333"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="407.5"
+                        x2="407.5"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="513.1666666666666"
+                        x2="513.1666666666666"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="618.8333333333334"
+                        x2="618.8333333333334"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="724.5"
+                        x2="724.5"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="830.1666666666666"
+                        x2="830.1666666666666"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="935.8333333333333"
+                        x2="935.8333333333333"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="1041.5"
+                        x2="1041.5"
+                        y1="53.5"
+                        y2="299.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                    </g>
+                    <g>
+                      <path
+                        d="M 360.62 54 A 2 2 0 0 1 362.62 56 L 362.62 143.1818181818182 A 2 2 0 0 1 360.62 145.1818181818182 L 91 145.1818181818182 A 0 0 0 0 1 91 145.1818181818182 L 91 54 A 0 0 0 0 1 91 54 Z"
+                        fill="#4285f4"
+                        clip-path="url(#rablfilter0)"
+                      ></path>
+                      <path
+                        d="M 939.6733333333333 195.8181818181818 A 2 2 0 0 1 941.6733333333333 197.8181818181818 L 941.6733333333333 285 A 2 2 0 0 1 939.6733333333333 287 L 91 287 A 0 0 0 0 1 91 287 L 91 195.8181818181818 A 0 0 0 0 1 91 195.8181818181818 Z"
+                        fill="#4285f4"
+                        clip-path="url(#rablfilter0)"
+                      ></path>
+                    </g>
+                    <g></g>
+                    <g>
+                      <text
+                        x="90.5"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        0
+                      </text>
+                      <text
+                        x="196.16666666666666"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        1K
+                      </text>
+                      <text
+                        x="301.8333333333333"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        2K
+                      </text>
+                      <text
+                        x="407.5"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        3K
+                      </text>
+                      <text
+                        x="513.1666666666666"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        4K
+                      </text>
+                      <text
+                        x="618.8333333333334"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        5K
+                      </text>
+                      <text
+                        x="724.5"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        6K
+                      </text>
+                      <text
+                        x="830.1666666666666"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        7K
+                      </text>
+                      <text
+                        x="935.8333333333333"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        8K
+                      </text>
+                      <text
+                        x="1041.5"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-7.131249904632568px"
+                      >
+                        9K
+                      </text>
+                      <text
+                        x="567.9970703125"
+                        y="11.899998188018799"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#424242"
+                        dx="-13.393750190734863px"
+                      >
+                        Total
+                      </text>
+                      <text
+                        x="84.5"
+                        y="103.59090011770076"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-46.48749923706055px"
+                      >
+                        Earnings
+                      </text>
+                      <text
+                        x="84.5"
+                        y="245.40909034555614"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-51.212501525878906px"
+                      >
+                        Expenses
+                      </text>
+                      <text
+                        x="15.076560974121094"
+                        y="167.2999963760376"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#424242"
+                        dx="-16.856250762939453px"
+                        transform="rotate(-90 15.076560974121094 170.5)"
+                      >
+                        Terms
+                      </text>
+                    </g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="content-header">
+        <h1 class="text-center">
+          Registered Member's Report <i class="fas fa-chart-bar"></i>
+        </h1>
+      </div>
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div
+              id="piechart"
+              style="
+                width: 800px;
+                height: 450px;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            >
+              <div style="position: relative">
+                <div
+                  dir="ltr"
+                  style="position: relative; width: 800px; height: 450px"
+                >
+                  <div
+                    aria-label="A chart."
+                    style="
+                      position: absolute;
+                      left: 0px;
+                      top: 0px;
+                      width: 100%;
+                      height: 100%;
+                    "
+                  >
+                    <svg
+                      width="800"
+                      height="450"
+                      aria-label="A chart."
+                      style="overflow: hidden"
+                    >
+                      <defs id="_ABSTRACT_RENDERER_ID_0"></defs>
+                      <rect
+                        x="0"
+                        y="0"
+                        width="800"
+                        height="450"
+                        stroke="none"
+                        stroke-width="0"
+                        fill="#ffffff"
+                      ></rect>
+                      <g>
+                        <text
+                          text-anchor="start"
+                          x="144"
+                          y="60.9"
+                          font-family="Arial"
+                          font-size="14"
+                          font-weight="bold"
+                          stroke="none"
+                          stroke-width="0"
+                          fill="#000000"
+                        >
+                          Percentage of Male and Female GYM Members
+                        </text>
+                        <rect
+                          x="144"
+                          y="49"
+                          width="513"
+                          height="14"
+                          stroke="none"
+                          stroke-width="0"
+                          fill-opacity="0"
+                          fill="#ffffff"
+                        ></rect>
+                      </g>
+                      <g>
+                        <rect
+                          x="484"
+                          y="86"
+                          width="173"
+                          height="37"
+                          stroke="none"
+                          stroke-width="0"
+                          fill-opacity="0"
+                          fill="#ffffff"
+                        ></rect>
+                        <g column-id="Female">
+                          <rect
+                            x="484"
+                            y="86"
+                            width="173"
+                            height="14"
+                            stroke="none"
+                            stroke-width="0"
+                            fill-opacity="0"
+                            fill="#ffffff"
+                          ></rect>
+                          <g>
+                            <text
+                              text-anchor="start"
+                              x="503"
+                              y="97.9"
+                              font-family="Arial"
+                              font-size="14"
+                              stroke="none"
+                              stroke-width="0"
+                              fill="#222222"
+                            >
+                              Female
+                            </text>
+                          </g>
+                          <circle
+                            cx="491"
+                            cy="93"
+                            r="7"
+                            stroke="none"
+                            stroke-width="0"
+                            fill="#3366cc"
+                          ></circle>
+                        </g>
+                        <g column-id="Male">
+                          <rect
+                            x="484"
+                            y="109"
+                            width="173"
+                            height="14"
+                            stroke="none"
+                            stroke-width="0"
+                            fill-opacity="0"
+                            fill="#ffffff"
+                          ></rect>
+                          <g>
+                            <text
+                              text-anchor="start"
+                              x="503"
+                              y="120.9"
+                              font-family="Arial"
+                              font-size="14"
+                              stroke="none"
+                              stroke-width="0"
+                              fill="#222222"
+                            >
+                              Male
+                            </text>
+                          </g>
+                          <circle
+                            cx="491"
+                            cy="116"
+                            r="7"
+                            stroke="none"
+                            stroke-width="0"
+                            fill="#dc3912"
+                          ></circle>
+                        </g>
+                      </g>
+                      <g>
+                        <path
+                          d="M303,225L303,86A139,139,0,0,1,423.37753112603696,294.5L303,225A0,0,0,0,0,303,225"
+                          stroke="#ffffff"
+                          stroke-width="1"
+                          fill="#3366cc"
+                        ></path>
+                        <text
+                          text-anchor="start"
+                          x="373.1683573302421"
+                          y="177.84127462299833"
+                          font-family="Arial"
+                          font-size="14"
+                          stroke="none"
+                          stroke-width="0"
+                          fill="#ffffff"
+                        >
+                          33.3%
+                        </text>
+                      </g>
+                      <g>
+                        <path
+                          d="M303,225L423.37753112603696,294.5A139,139,0,1,1,303,86L303,225A0,0,0,1,0,303,225"
+                          stroke="#ffffff"
+                          stroke-width="1"
+                          fill="#dc3912"
+                        ></path>
+                        <text
+                          text-anchor="start"
+                          x="192.8316426697579"
+                          y="281.95872537700154"
+                          font-family="Arial"
+                          font-size="14"
+                          stroke="none"
+                          stroke-width="0"
+                          fill="#ffffff"
+                        >
+                          66.7%
+                        </text>
+                      </g>
+                      <g></g>
+                    </svg>
+                    <div
+                      aria-label="A tabular representation of the data in the chart."
+                      style="
+                        position: absolute;
+                        left: -10000px;
+                        top: auto;
+                        width: 1px;
+                        height: 1px;
+                        overflow: hidden;
+                      "
+                    >
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Gender</th>
+                            <th>Number</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Female</td>
+                            <td>6</td>
+                          </tr>
+                          <tr>
+                            <td>Male</td>
+                            <td>12</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  style="
+                    display: none;
+                    position: absolute;
+                    top: 460px;
+                    left: 810px;
+                    white-space: nowrap;
+                    font-family: Arial;
+                    font-size: 14px;
+                  "
+                >
+                  Male
+                </div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="content-header">
+        <h1 class="text-center">
+          Services Report <i class="fas fa-chart-bar"></i>
+        </h1>
+      </div>
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div id="top_x_div" style="width: 1000px; height: 350px">
+              <div style="position: relative; width: 1050px; height: 350px">
+                <div
+                  style="
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                  "
+                >
+                  <svg width="1050" height="350">
+                    <defs>
+                      <clipPath id="rablfilter1">
+                        <rect x="78.5" y="53.5" width="968" height="296"></rect>
+                      </clipPath>
+                    </defs>
+                    <g>
+                      <rect
+                        x="0"
+                        y="0"
+                        width="1050"
+                        height="350"
+                        fill="white"
+                        stroke="black"
+                        stroke-width="0"
+                      ></rect>
+                      <rect
+                        x="78.5"
+                        y="53.5"
+                        width="968"
+                        height="296"
+                        fill="none"
+                      ></rect>
+                    </g>
+                    <g>
+                      <line
+                        x1="78.5"
+                        x2="78.5"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#9E9E9E"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="186.05555555555554"
+                        x2="186.05555555555554"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="293.6111111111111"
+                        x2="293.6111111111111"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="401.16666666666663"
+                        x2="401.16666666666663"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="508.7222222222222"
+                        x2="508.7222222222222"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="616.2777777777778"
+                        x2="616.2777777777778"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="723.8333333333333"
+                        x2="723.8333333333333"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="831.3888888888889"
+                        x2="831.3888888888889"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="938.9444444444443"
+                        x2="938.9444444444443"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                      <line
+                        x1="1046.5"
+                        x2="1046.5"
+                        y1="53.5"
+                        y2="349.5"
+                        stroke="#E0E0E0"
+                        stroke-width="1"
+                      ></line>
+                    </g>
+                    <g>
+                      <path
+                        d="M 721.3333333333333 54 A 2 2 0 0 1 723.3333333333333 56 L 723.3333333333333 120.66037735849055 A 2 2 0 0 1 721.3333333333333 122.66037735849055 L 79 122.66037735849055 A 0 0 0 0 1 79 122.66037735849055 L 79 54 A 0 0 0 0 1 79 54 Z"
+                        fill="#4285f4"
+                        clip-path="url(#rablfilter1)"
+                      ></path>
+                      <path
+                        d="M 1044 161.16981132075472 A 2 2 0 0 1 1046 163.16981132075472 L 1046 227.83018867924525 A 2 2 0 0 1 1044 229.83018867924525 L 79 229.83018867924525 A 0 0 0 0 1 79 229.83018867924525 L 79 161.16981132075472 A 0 0 0 0 1 79 161.16981132075472 Z"
+                        fill="#4285f4"
+                        clip-path="url(#rablfilter1)"
+                      ></path>
+                      <path
+                        d="M 398.66666666666663 268.3396226415094 A 2 2 0 0 1 400.66666666666663 270.3396226415094 L 400.66666666666663 335 A 2 2 0 0 1 398.66666666666663 337 L 79 337 A 0 0 0 0 1 79 337 L 79 268.3396226415094 A 0 0 0 0 1 79 268.3396226415094 Z"
+                        fill="#4285f4"
+                        clip-path="url(#rablfilter1)"
+                      ></path>
+                    </g>
+                    <g></g>
+                    <g>
+                      <text
+                        x="78.5"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        0
+                      </text>
+                      <text
+                        x="186.05555555555554"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        1
+                      </text>
+                      <text
+                        x="293.6111111111111"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        2
+                      </text>
+                      <text
+                        x="401.16666666666663"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        3
+                      </text>
+                      <text
+                        x="508.7222222222222"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        4
+                      </text>
+                      <text
+                        x="616.2777777777778"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        5
+                      </text>
+                      <text
+                        x="723.8333333333333"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        6
+                      </text>
+                      <text
+                        x="831.3888888888889"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        7
+                      </text>
+                      <text
+                        x="938.9444444444443"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        8
+                      </text>
+                      <text
+                        x="1046.5"
+                        y="44.30000019073486"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-3.375px"
+                      >
+                        9
+                      </text>
+                      <text
+                        x="562.5"
+                        y="11.899998188018799"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#424242"
+                        dx="-13.393750190734863px"
+                      >
+                        Total
+                      </text>
+                      <text
+                        x="72.5"
+                        y="92.33018908410702"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-34.8125px"
+                      >
+                        Cardio
+                      </text>
+                      <text
+                        x="72.5"
+                        y="199.49999666213984"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-38.82500076293945px"
+                      >
+                        Fitness
+                      </text>
+                      <text
+                        x="72.5"
+                        y="306.66980424017265"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#757575"
+                        dx="-33.412498474121094px"
+                      >
+                        Sauna
+                      </text>
+                      <text
+                        x="15.469139099121094"
+                        y="192.2999963760376"
+                        style="
+                          cursor: default;
+                          user-select: none;
+                          -webkit-font-smoothing: antialiased;
+                          font-family: Roboto;
+                          font-size: 12px;
+                        "
+                        fill="#424242"
+                        dx="-22.600000381469727px"
+                        transform="rotate(-90 15.469139099121094 195.5)"
+                      >
+                        Services
+                      </text>
+                    </g>
+                    <g></g>
+                    <g></g>
+                    <g></g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--end-main-container-part-->
+
+    <!--Footer-part-->
+
+    <div class="row-fluid">
+      <div id="footer" class="span12">
+        2024 © Developed By Naseeb Bajracharya
+      </div>
+    </div>
+
+    <style>
+      #footer {
+        color: white;
+      }
+    </style>
+
+    <!--end-Footer-part-->
+
+    <script src="./js/excanvas.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.ui.custom.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.flot.min.js"></script>
+    <script src="./js/jquery.flot.resize.min.js"></script>
+    <script src="./js/jquery.peity.min.js"></script>
+    <script src="./js/fullcalendar.min.js"></script>
+    <script src="./js/matrix.js"></script>
+    <script src="./js/matrix.dashboard.js"></script>
+    <script src="./js/jquery.gritter.min.js"></script>
+    <script src="./js/matrix.interface.js"></script>
+    <script src="./js/matrix.chat.js"></script>
+    <script src="./js/jquery.validate.js"></script>
+    <script src="./js/matrix.form_validation.js"></script>
+    <script src="./js/jquery.wizard.js"></script>
+    <script src="./js/jquery.uniform.js"></script>
+    <script src="./js/select2.min.js"></script>
+    <script src="./js/matrix.popover.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/matrix.tables.js"></script>
+  </body>
+</html>

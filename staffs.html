@@ -1,0 +1,363 @@
+<html lang="en">
+  <head>
+    <title>Gym System Admin</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="./css/uniform.css" />
+    <link rel="stylesheet" href="./css/select2.css" />
+    <link rel="stylesheet" href="./css/matrix-style.css" />
+    <link rel="stylesheet" href="./css/matrix-media.css" />
+    <link href="./font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./font-awesome/css/all.css" rel="stylesheet" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body cz-shortcut-listen="true">
+    <!--Header-part-->
+    <div id="header">
+      <h1><a href="dashboard.html">Perfect Gym Admin</a></h1>
+    </div>
+    <!--close-Header-part-->
+
+    <!--top-Header-menu-->
+    <div id="user-nav" class="navbar navbar-inverse">
+      <ul class="nav right">
+        <li class="dropdown" id="profile-messages">
+          <a
+            title=""
+            href="#"
+            data-toggle="dropdown"
+            data-target="#profile-messages"
+            class="dropdown-toggle"
+            ><i class="fas fa-user-circle"></i>
+            <span class="text">Welcome Admin</span><b class="caret"></b
+          ></a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#"><i class="fas fa-user"></i> My Profile</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#"><i class="fas fa-check"></i> My Tasks</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="./logout.html"><i class="fas fa-key"></i> Log Out</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="">
+          <a title="" href="./logout.html"
+            ><i class="fas fa-power-off"></i>
+            <span class="text">Logout</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- Visit codeastro.com for more projects --><!--close-top-Header-menu-->
+    <!-- Visit codeastro.com for more projects -->
+    <!--sidebar-menu-->
+    <div id="sidebar">
+      <a href="#" class="visible-phone"
+        ><i class="fas fa-home"></i> Dashboard</a
+      >
+      <ul style="display: block">
+        <li class="">
+          <a href="index.html"
+            ><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-users"></i> <span>Manage Members</span>
+            <span class="label label-important"
+              >18<!-- Visit codeastro.com for more projects -->
+            </span></a
+          >
+          <ul>
+            <li class="">
+              <a href="members.html"
+                ><i class="fas fa-arrow-right"></i> List All Members</a
+              >
+            </li>
+            <li class="">
+              <a href="member-entry.html"
+                ><i class="fas fa-arrow-right"></i> Member Entry Form</a
+              >
+            </li>
+            <li class="">
+              <a href="remove-member.html"
+                ><i class="fas fa-arrow-right"></i> Remove Member</a
+              >
+            </li>
+            <li class="">
+              <a href="edit-member.html"
+                ><i class="fas fa-arrow-right"></i> Update Member Details</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="submenu">
+          <a href="#"
+            ><i class="fas fa-dumbbell"></i> <span>Gym Equipment</span>
+            <span class="label label-important"
+              >6<!-- Visit codeastro.com for more projects -->
+            </span></a
+          >
+          <ul>
+            <li class="">
+              <a href="equipment.html"
+                ><i class="fas fa-arrow-right"></i> List Gym Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="equipment-entry.html"
+                ><i class="fas fa-arrow-right"></i> Add Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="remove-equipment.html"
+                ><i class="fas fa-arrow-right"></i> Remove Equipment</a
+              >
+            </li>
+            <li class="">
+              <a href="edit-equipment.html"
+                ><i class="fas fa-arrow-right"></i> Update Equipment Details</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="">
+          <a href="view-attendance.html"
+            ><i class="fas fa-calendar-alt"></i> <span>Attendance</span></a
+          >
+        </li>
+
+        
+        <li class="">
+          <a href="member-status.html"
+            ><i class="fas fa-eye"></i> <span>Member's Status</span></a
+          >
+        </li>
+        <li class="">
+          <a href="payment.html"
+            ><i class="fas fa-hand-holding-usd"></i> <span>Payments</span></a
+          >
+        </li>
+        <li class="">
+          <a href="announcement.html"
+            ><i class="fas fa-bullhorn"></i> <span>Manage Feedback</span></a
+          >
+        </li>
+        <li class="active">
+          <a href="staffs.html"
+            ><i class="fas fa-briefcase"></i> <span>Staff Management</span></a
+          >
+        </li>
+        <li class="submenu">
+          <a href="#"><i class="fas fa-file"></i> <span>Reports</span></a>
+          <ul>
+            <li class="">
+              <a href="reports.html"
+                ><i class="fas fa-arrow-right"></i> Chart Representation</a
+              >
+            </li>
+            <li class="">
+              <a href="members-report.html"
+                ><i class="fas fa-arrow-right"></i> Members Report</a
+              >
+            </li>
+            <li class="">
+              <a href="progress-report.html"
+                ><i class="fas fa-arrow-right"></i> Customer Progress Report</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <!-- Visit codeastro.com for more projects -->
+      </ul>
+    </div>
+    <!--sidebar-menu-->
+
+    <div id="content">
+      <div id="content-header">
+        <div id="breadcrumb">
+          <a
+            href="index.html"
+            class="tip-bottom"
+            data-original-title="Go to Home"
+            ><i class="fas fa-home"></i> Home</a
+          >
+          <a href="staffs.html" class="current">Staff Members</a>
+        </div>
+        <h1 class="text-center">
+          GYM's Staff List <i class="fas fa-briefcase"></i>
+        </h1>
+      </div>
+      <div class="container-fluid">
+        <hr />
+        <div class="row-fluid">
+          <div class="span12">
+            <a href="staffs-entry.html"
+              ><button class="btn btn-primary">Add Staff Members</button></a
+            >
+            <div class="widget-box">
+              <div class="widget-title">
+                <span class="icon"> <i class="fas fa-th"></i> </span>
+                <h5>Staff table</h5>
+              </div>
+              <div class="widget-content nopadding">
+                <!-- Visit codeastro.com for more projects -->
+                <table class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Fullname</th>
+                      <th>Username</th>
+                      <th>Gender</th>
+                      <th>Designation</th>
+                      <th>Email</th>
+                      <th>Address</th>
+                      <th>Contact</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="">
+                      <td><div class="text-center">1</div></td>
+                      <td><div class="text-center">Bruno Den</div></td>
+                      <td><div class="text-center">@bruno</div></td>
+                      <td><div class="text-center">Male</div></td>
+                      <td><div class="text-center">Cashier</div></td>
+                      <td><div class="text-center">brunoden@mail.com</div></td>
+                      <td><div class="text-center">26 Morris Street</div></td>
+                      <td><div class="text-center">852028120</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="edit-staff-form.html?id=1"
+                            ><i class="fas fa-edit" style="color: #28b779"></i>
+                            Edit |</a
+                          >
+                          <a href="remove-staff.html?id=1" style="color: #f66"
+                            ><i class="fas fa-trash"></i> Remove</a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr class="">
+                      <td><div class="text-center">2</div></td>
+                      <td><div class="text-center">Michelle R. Lane</div></td>
+                      <td><div class="text-center">@michelle</div></td>
+                      <td><div class="text-center">Female</div></td>
+                      <td><div class="text-center">Trainer</div></td>
+                      <td><div class="text-center">michelle@mail.com</div></td>
+                      <td><div class="text-center">61 Stone Lane</div></td>
+                      <td><div class="text-center">2147483647</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="edit-staff-form.html?id=2"
+                            ><i class="fas fa-edit" style="color: #28b779"></i>
+                            Edit |</a
+                          >
+                          <a href="remove-staff.html?id=2" style="color: #f66"
+                            ><i class="fas fa-trash"></i> Remove</a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr class="">
+                      <td><div class="text-center">3</div></td>
+                      <td><div class="text-center">James Brown</div></td>
+                      <td><div class="text-center">@james</div></td>
+                      <td><div class="text-center">Male</div></td>
+                      <td><div class="text-center">Trainer</div></td>
+                      <td><div class="text-center">jamesb@mail.com</div></td>
+                      <td>
+                        <div class="text-center">12 Deer Ridge Drive</div>
+                      </td>
+                      <td><div class="text-center">2147483647</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="edit-staff-form.html?id=3"
+                            ><i class="fas fa-edit" style="color: #28b779"></i>
+                            Edit |</a
+                          >
+                          <a href="remove-staff.html?id=3" style="color: #f66"
+                            ><i class="fas fa-trash"></i> Remove</a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr class="">
+                      <td><div class="text-center">4</div></td>
+                      <td><div class="text-center">Bruce H. Klaus</div></td>
+                      <td><div class="text-center">@bruce</div></td>
+                      <td><div class="text-center">Male</div></td>
+                      <td><div class="text-center">Manager</div></td>
+                      <td><div class="text-center">bruce@mail.com</div></td>
+                      <td>
+                        <div class="text-center">68 Lake Floyd Circle</div>
+                      </td>
+                      <td><div class="text-center">1458887788</div></td>
+                      <td>
+                        <div class="text-center">
+                          <a href="edit-staff-form.html?id=4"
+                            ><i class="fas fa-edit" style="color: #28b779"></i>
+                            Edit |</a
+                          >
+                          <a href="remove-staff.html?id=4" style="color: #f66"
+                            ><i class="fas fa-trash"></i> Remove</a
+                          >
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--end-main-container-part-->
+
+    <!--Footer-part-->
+
+    <div class="row-fluid">
+      <div id="footer" class="span12">
+        2024 © Developed By Naseeb Bajracharya
+      </div>
+    </div>
+
+    <style>
+      #footer {
+        color: white;
+      }
+    </style>
+
+    <!--end-Footer-part-->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery.ui.custom.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.uniform.js"></script>
+    <script src="./js/select2.min.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/matrix.js"></script>
+    <script src="./js/matrix.tables.js"></script>
+  </body>
+</html>
