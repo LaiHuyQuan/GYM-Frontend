@@ -1,16 +1,53 @@
-function addMemberEdit() {
-  var newRow = `<tbody data-id= "12312" >
-                    <tr>
-                      <td><div class="text-center">1</div></td>
-                      <td><div class="text-center">Harry Denn</div></td>
-                      <td><div class="text-center">@harry</div></td>
-                      <td><div class="text-center">Male</div></td>
-                      <td><div class="text-center">8545878545</div></td>
-                      <td><div class="text-center">2019-12-25</div></td>
-                      <td><div class="text-center">64 Mulberry Lane</div></td>
-                      <td><div class="text-center">$165</div></td>
-                      <td><div class="text-center">Fitness</div></td>
-                      <td><div class="text-center">3 Month/s</div></td>
+let MemberData;
+
+function fetchMembersData() {
+  fetch("http://localhost:3000/members")
+    .then((response) => response.json())
+    .then((data) => {
+      MemberData = data;
+      for (let i = 0; i < MemberData.length; i++) {
+        addMemberEdit(MemberData[i], i);
+      }
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+function addMemberEdit(data, i) {
+  var newRow =
+    `<tbody data-id= "` +
+    data.user_id +
+    `">
+  <tr>
+  <td><div class="text-center">` +
+    (i + 1) +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.fullname +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.username +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.gender +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.contact +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.dor +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.address +
+    `</div></td>
+  <td><div class="text-center">$` +
+    data.amount +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.services +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.plan +
+    ` Month/s</div></td>
                       <td>
                         <div class="edit-btn text-center">
                             <i class="fas fa-edit"></i> Edit</a
@@ -21,11 +58,19 @@ function addMemberEdit() {
                   </tbody>`;
   $(".table").append(newRow);
 
+  function redirectTo(url, paramName, paramValue) {
+    const separator = url.includes("?") ? "&" : "?";
+    const newUrl = `${url}${separator}${paramName}=${encodeURIComponent(
+      paramValue
+    )}`;
+    window.location.href = newUrl;
+  }
+
   $(".container-fluid").on("click", ".edit-btn", function (e) {
     e.preventDefault();
     currentUserId = $(this).parent().parent().parent().data("id");
-    window.location.href = "edit-memberform.html";
+    redirectTo("edit-memberform.html", "user_id", currentUserId);
   });
 }
 
-addMemberEdit();
+fetchMembersData();
