@@ -1,17 +1,63 @@
-function addMemberRemove() {
-  var newRow = `<tbody>
-                    <tr>
-                      <td><div class="text-center">1</div></td>
-                      <td><div class="text-center">Harry Denn</div></td>
-                      <td><div class="text-center">@harry</div></td>
-                      <td><div class="text-center">8545878545</div></td>
-                      <td><div class="text-center">2019-12-25</div></td>
-                      <td><div class="text-center">64 Mulberry Lane</div></td>
-                      <td><div class="text-center">$165</div></td>
-                      <td><div class="text-center">Fitness</div></td>
-                      <td><div class="text-center">3 Month/s</div></td>
+let MemberData;
+
+function fetchMembersData() {
+  fetch("http://localhost:3000/members")
+    .then((response) => response.json())
+    .then((data) => {
+      MemberData = data;
+      for (let i = 0; i < MemberData.length; i++) {
+        addMemberRemove(MemberData[i], i);
+      }
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+function deleteMember(id) {
+  fetch(`http://localhost:3000/members/${id}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(1);
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+function addMemberRemove(data, i) {
+  var newRow =
+    `<tbody data-id= "` +
+    data.user_id +
+    `">
+  <tr>
+  <td><div class="text-center">` +
+    (i + 1) +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.fullname +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.username +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.contact +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.dor +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.address +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.amount +
+    `</div></td>
+  <td><div class="text-center">$` +
+    data.services +
+    `</div></td>
+  <td><div class="text-center">` +
+    data.plan +
+    ` Month/s</div></td>
                       <td>
-                        <div class="text-center">
+                        <div class="remove-btn text-center">
                           <a
                             href=""
                             style="color: #f66"
@@ -24,6 +70,12 @@ function addMemberRemove() {
   $(".table").append(newRow);
 }
 
- $(".table").on("click", ".")
+$(".container-fluid").on("click", ".remove-btn", function (event) {
+  event.preventDefault();
+  $(this).parent().parent().parent().remove();
+  var removeid = $(this).parent().parent().parent().data("id");
+  deleteMember(removeid);
+  console.log(removeid);
+});
 
-addMemberRemove();
+fetchMembersData();
