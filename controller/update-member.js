@@ -58,14 +58,6 @@ function addMemberEdit(data, i) {
                   </tbody>`;
   $(".table").append(newRow);
 
-  function redirectTo(url, paramName, paramValue) {
-    const separator = url.includes("?") ? "&" : "?";
-    const newUrl = `${url}${separator}${paramName}=${encodeURIComponent(
-      paramValue
-    )}`;
-    window.location.href = newUrl;
-  }
-
   $(".container-fluid").on("click", ".edit-btn", function (e) {
     e.preventDefault();
     currentUserId = $(this).parent().parent().parent().data("id");

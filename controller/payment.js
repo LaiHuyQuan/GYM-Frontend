@@ -1,17 +1,46 @@
-function addPaymentDetail() {
-  var newRow = `<tbody data-id="12342">
-                    <tr>
-                      <td><div class="text-center">18</div></td>
-                      <td><div class="text-center">12314</div></td>
-                      <td><div class="text-center">0000-00-00</div></td>
+let MemberData;
 
-                      <td><div class="text-center">$0</div></td>
-                      <td><div class="text-center">Sauna</div></td>
-                      <td><div class="text-center">180 Month/s</div></td>
+function fetchMembersData() {
+  fetch("http://localhost:3000/members")
+    .then((response) => response.json())
+    .then((data) => {
+      MemberData = data;
+      for (let i = 0; i < MemberData.length; i++) {
+        addPaymentDetail(MemberData[i], i);
+      }
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+function addPaymentDetail(data, i) {
+  var newRow =
+    `<tbody data-id="` +
+    data.user_id +
+    `">
+                    <tr>
+                      <td><div class="text-center">` +
+    (i + 1) +
+    `</div></td>
+                      <td><div class="text-center">` +
+    data.fullname +
+    `</div></td>
+                      <td><div class="text-center">` +
+    data.paid_date.split("T")[0] +
+    `</div></td>
+
+                      <td><div class="text-center">$` +
+    data.amount +
+    `</div></td>
+                      <td><div class="text-center">` +
+    data.services +
+    `</div></td>
+                      <td><div class="text-center">` +
+    data.plan +
+    ` Month/s</div></td>
                       <td>
                         <div class="text-center add-btn">
                           <a
-                            ><button class="btn btn-success">
+                            ><button class="btn btn-success add-btn">
                               <i class="fas fa-dollar-sign"></i> Make Payment
                             </button></a
                           >
@@ -30,4 +59,4 @@ $(".container-fluid").on("click", ".add-btn", function (e) {
   redirectTo("user-payment.html", "user_id", currentUserId);
 });
 
-addPaymentDetail();
+fetchMembersData();

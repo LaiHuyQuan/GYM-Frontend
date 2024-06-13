@@ -6,27 +6,17 @@ function fetchMembersData() {
     .then((data) => {
       MemberData = data;
       for (let i = 0; i < MemberData.length; i++) {
-        addMemberAtendance(MemberData[i], i);
+        addMemberReport(MemberData[i], i);
       }
     })
     .catch((error) => console.error("Error:", error));
 }
 
-function addMemberAtendance(data, i) {
-  var atendance;
-
-  var registrationDate = new Date(data.dor);
-  var today = new Date();
-  var timeDiff = registrationDate.getTime() - today.getTime();
-  var daysRemaining = Math.ceil(timeDiff / (1000 * 3600 * 24));
-  atendance = daysRemaining + data.plan * 30 + " Days";
-
-  if (atendance <= 0) {
-    atendance = "None";
-  }
-
+function addMemberReport(data, i) {
   var newRow =
-    `<tbody>
+    `<tbody data-id = "` +
+    data.user_id +
+    `">
                     <tr>
                       <td><div class="text-center">` +
     (i + 1) +
@@ -35,14 +25,24 @@ function addMemberAtendance(data, i) {
     data.fullname +
     `</div></td>
                       <td><div class="text-center">` +
-    data.plan +
-    ` Months</div></td>
-                      <td><div class="text-center">` +
-    atendance +
+    data.services +
     `</div></td>
+                      <td>
+                        <div class="text-center edit">
+                            <i class="fas fa-file"></i> View Report</a
+                          >
+                        </div>
+                      </td>
                     </tr>
                   </tbody>`;
   $(".table").append(newRow);
 }
+
+$(".container-fluid").on("click", ".edit", function (e) {
+  e.preventDefault();
+  currentEId = $(this).parent().parent().parent().data("id");
+  console.log(currentEId);
+  redirectTo("view-member-report.html", "user_id", currentEId);
+});
 
 fetchMembersData();
