@@ -72,7 +72,7 @@ $(".container-fluid").on("click", ".submit", function (event) {
     paid_date: getCurrentDate(),
     p_year: "2024",
     status: $('select[name="status"]').val(),
-    gymId: "836f4fef-d445-4e21-84c0-e994a3fc365b",
+    gymId: GymID,
   };
   console.log(formData);
 

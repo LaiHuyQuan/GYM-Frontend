@@ -12,7 +12,7 @@ $(".container-fluid").on("click", ".submit", function (event) {
     address: $('input[name="address"]').val(),
     contact: $('input[name="contact"]').val(),
     amount: $('input[name="amount"]').val(),
-    gymId: "836f4fef-d445-4e21-84c0-e994a3fc365b",
+    gymId: GymID,
   };
 
   createEquipment(formData);

@@ -12,7 +12,7 @@ $(".container-fluid").on("click", ".submit", function (event) {
       role: $("#designation").val(),
       gender: $("#gender").val(),
       contact: $("#contact").val(),
-      gymId: "836f4fef-d445-4e21-84c0-e994a3fc365b",
+      gymId: GymID,
     };
     console.log(formData);
     addStaff(formData);

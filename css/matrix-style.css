@@ -175,14 +175,17 @@ hr {
   z-index: -9;
 }
 #header h1 {
-  background: url("../img/icontest3.png") no-repeat scroll 0 0 transparent;
-  height: 31px;
+  background: url("../img/icontest3.png") no-repeat center transparent;
+  background-size: contain;
+  height: 50px;
   left: 20px;
   line-height: 600px;
   overflow: hidden;
   position: relative;
   top: 26px;
   width: 191px;
+  margin: 0 !important;
+  margin-bottom: 10px !important;
 }
 #header h1 a {
   display: block;

@@ -60,7 +60,7 @@ $(".container-fluid").on("click", ".submit", function (e) {
     address: $('input[name="address"]').val(),
     role: $('select[name="designation"]').val(),
     email: currentStaffData.email,
-    gymId: "836f4fef-d445-4e21-84c0-e994a3fc365b",
+    gymId: GymID,
   };
 
   console.log(formData);

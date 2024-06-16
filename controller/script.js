@@ -1,5 +1,15 @@
 let currentEId;
 let currentUserId;
+let GymID;
+
+function loadGYM() {
+  fetch("http://localhost:3000/gym")
+    .then((response) => response.json())
+    .then((data) => {
+      GymID = data[0].gymId;
+    })
+    .catch((error) => console.error("Error:", error));
+}
 
 function loadMembersNum() {
   fetch("http://localhost:3000/members")
@@ -29,5 +39,6 @@ function redirectTo(url, paramName, paramValue) {
   window.location.href = newUrl;
 }
 
+loadGYM();
 loadMembersNum();
 loadEquipmentsNum();
